@@ -4,6 +4,6 @@ MAINTAINER Adam Garibay <adam.garibay@gmail.com>
 
 RUN mkdir /app
 
-RUN pip install bs4
+RUN pip install bs4 reqeusts
 
 CMD python -u /app/app.py
