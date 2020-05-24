@@ -1,0 +1,20 @@
+This was a quick script I wrote which helped me snag a set of bumper plates of rouge.
+
+REQUIREMENTS:
+ 1) A device running a Linux distro.
+ 2) Docker running on that Linux distro.
+ 3) Minimal knowledge of editing text files.
+ 4) Some knowledge of webpage source.
+ 
+HOW TO USE:
+ 1) git clone https://github.com/adagari/rogue_scraper.git
+ 2) Build docker image with: docker built -t scraper .
+ 3) Modify commented lines in app.py
+    a. Modify line 14 with the url of the item.
+    b. find the item you want to scrape, right click "notify me" -> inspect element
+    c. find the class for the item, it should be a few lines up and look like 
+       "product-options-bottom product-options-bottom-8313" or "grouped-item product-purchase-wrapper-28741"
+       Make sure to remove any double spaces and update the information on line 26
+    d. On lines 47-49 update sender/receiver email information.
+ 4) Start container: docker run -v /path/to/app.py:/app/app.py --name rogue_scraper -d scraper:latest
+ 5) Check logs with: docker logs rogue_scraper
