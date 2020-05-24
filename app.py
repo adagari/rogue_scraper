@@ -53,7 +53,7 @@ def send_mail(url):
     message['Subject'] = 'This item may be in stock!'
     mail_content = 'Hello,\nThis item appears to be in stock.\n\n' + url + '\n\nSigned,\nHackermane1337' #message format, can be changed
     message.attach(MIMEText(mail_content, 'plain'))
-    session = smtplib.SMTP('smtp.gmail.com', 587)
+    session = smtplib.SMTP('smtp.gmail.com', 587) #using gmail
     session.starttls()
     session.login(sender_address, sender_pass)
     text = message.as_string()
